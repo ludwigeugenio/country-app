@@ -42,7 +42,7 @@ export default function usePagination(data: Array<any>) {
             else break;
         }
         setPagesToShow(newPagesToShow);
-    }, [data, currentPageSet])
+    }, [pages, currentPageSet])
 
     /**
      * @function next
@@ -71,7 +71,7 @@ export default function usePagination(data: Array<any>) {
 
     /**
      * @function nextSet
-     * @description move to the next set
+     * @description move to the
      */
     const nextSet = () => {
         if (!isLastSet) {
