@@ -44,18 +44,35 @@ export default function usePagination(data: Array<any>) {
         setPagesToShow(newPagesToShow);
     }, [data, currentPageSet])
 
+    /**
+     * @function next
+     * @description move the page to the next one
+     */
     const next = () => {
         if (currentPage < pages) setCurrentPage(currentPage + 1)
     }
 
+    /**
+     * @function previous
+     * @description move the page to the previous one
+     */
     const previous = () => {
         if (currentPage > 1) setCurrentPage(currentPage - 1)
     }
 
+    /**
+     * @function jumpToPage
+     * @description jump to a specific page
+     * @param page page to jump to
+     */
     const jumpToPage = (page: number) => {
         setCurrentPage(page);
     }
 
+    /**
+     * @function nextSet
+     * @description move to the next set
+     */
     const nextSet = () => {
         if (!isLastSet) {
             const nextSet = currentPageSet + 1;

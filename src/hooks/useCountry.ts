@@ -61,22 +61,47 @@ export default function useCountry(): CountryHook {
 
     useEffect(filterAndSortCountries, [countries, order, attr, area, areaCondition, region])
 
+    /**
+     * @function changeOrder
+     * @description changes the order of the countries by ascending or descending
+     * @param order order to follow
+     */
     const changeOrder = (order: string) => {
         setOrder(order);
     }
 
+    /**
+     * @function changeArea
+     * @description changes the area of the countries depending to the condition set
+     * @param countryName name of the country
+     */
     const changeArea = (countryName: string) => {
         setArea(areaMap[countryName]);
     }
 
+    /**
+     * @function changeRegion
+     * @description changes the region of the countries
+     * @param region name of the region
+     */
     const changeRegion = (region: string) => {
         setRegion(region)
     }
 
+    /**
+     * @function changeAttr
+     * @description change the order attribute 
+     * @param attr name of the attribute
+     */
     const changeAttr = (attr: AttribOptions) => {
         setAttr(attr)
     }
 
+    /**
+     * @function changeAreaCondition
+     * @description change the area condition on which the area is depending to 
+     * @param condition condition to apply
+     */
     const changeAreaCondition = (condition: string) => {
         setAreaCondition(condition);
     }
