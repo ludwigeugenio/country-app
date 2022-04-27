@@ -6,7 +6,7 @@ interface Props {
 }
 
 const CountryFilter: React.FC<Props> = ({ countryHook }) => {
-    const regions = ["Africa", "Asia", "Americas", "Europe", "Oceania"];
+    const regions = ["All", "Africa", "Asia", "Americas", "Europe", "Oceania"];
 
     const { changeRegion, changeOrder, changeArea, changeAttr, changeAreaCondition } = countryHook;
 
@@ -58,7 +58,7 @@ const CountryFilter: React.FC<Props> = ({ countryHook }) => {
                 <Select
                     className="two columns"
                     onChange={handleRegionChange}
-                    defaultValue="all"
+                    defaultValue="All"
                     options={regions.map(region => ({ label: region, value: region }))}
                 />
             </div>

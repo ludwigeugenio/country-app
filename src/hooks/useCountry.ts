@@ -17,7 +17,7 @@ export default function useCountry(): CountryHook {
     const [attr, setAttr] = useState<AttribOptions>(AttribOptions.NAME);
     const [area, setArea] = useState<number | null>(null);
     const [areaCondition, setAreaCondition] = useState<string>(">");
-    const [region, setRegion] = useState<Country["region"]>("all")
+    const [region, setRegion] = useState<Country["region"]>("All")
 
     useEffect(() => {
         const newAreaMap: Record<string, number> = {};
@@ -46,12 +46,12 @@ export default function useCountry(): CountryHook {
             }
         });
 
-        if (area || region !== "all")
+        if (area || region !== "All")
             sortedList = sortedList.filter(country => {
                 let validArea: boolean = true;
                 let validRegion: boolean = true;
                 if (area) validArea = areaCondition === ">" ? area > country.area : area < country.area;
-                if (region !== "all") validRegion = region === country.region;
+                if (region !== "All") validRegion = region === country.region;
 
                 return validArea && validRegion
             })
